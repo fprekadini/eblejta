@@ -1,4 +1,4 @@
-/*! elementor-pro - v3.3.1 - 20-06-2021 */
+/*! elementor-pro - v3.3.3 - 20-07-2021 */
 @charset "UTF-8";
 .elementor-bg-transform .elementor-bg {
   will-change: transform; }
@@ -503,138 +503,6 @@ body.rtl.woocommerce-page div.product .elementor-widget-woocommerce-product-imag
 
 .elementor-product-rating--align-justify .woocommerce-product-rating .woocommerce-review-link {
   margin-right: auto; }
-
-@media (min-width: 1025px) {
-  .elementor-element.elementor-products-grid ul.products.columns-2 {
-    grid-template-columns: repeat(2, 1fr); }
-  .elementor-element.elementor-products-grid .woocommerce.columns-2 ul.products {
-    grid-template-columns: repeat(2, 1fr); }
-  .elementor-element.elementor-products-grid ul.products.columns-3 {
-    grid-template-columns: repeat(3, 1fr); }
-  .elementor-element.elementor-products-grid .woocommerce.columns-3 ul.products {
-    grid-template-columns: repeat(3, 1fr); }
-  .elementor-element.elementor-products-grid ul.products.columns-4 {
-    grid-template-columns: repeat(4, 1fr); }
-  .elementor-element.elementor-products-grid .woocommerce.columns-4 ul.products {
-    grid-template-columns: repeat(4, 1fr); }
-  .elementor-element.elementor-products-grid ul.products.columns-5 {
-    grid-template-columns: repeat(5, 1fr); }
-  .elementor-element.elementor-products-grid .woocommerce.columns-5 ul.products {
-    grid-template-columns: repeat(5, 1fr); }
-  .elementor-element.elementor-products-grid ul.products.columns-6 {
-    grid-template-columns: repeat(6, 1fr); }
-  .elementor-element.elementor-products-grid .woocommerce.columns-6 ul.products {
-    grid-template-columns: repeat(6, 1fr); }
-  .elementor-element.elementor-products-grid ul.products.columns-7 {
-    grid-template-columns: repeat(7, 1fr); }
-  .elementor-element.elementor-products-grid .woocommerce.columns-7 ul.products {
-    grid-template-columns: repeat(7, 1fr); }
-  .elementor-element.elementor-products-grid ul.products.columns-8 {
-    grid-template-columns: repeat(8, 1fr); }
-  .elementor-element.elementor-products-grid .woocommerce.columns-8 ul.products {
-    grid-template-columns: repeat(8, 1fr); }
-  .elementor-element.elementor-products-grid ul.products.columns-9 {
-    grid-template-columns: repeat(9, 1fr); }
-  .elementor-element.elementor-products-grid .woocommerce.columns-9 ul.products {
-    grid-template-columns: repeat(9, 1fr); }
-  .elementor-element.elementor-products-grid ul.products.columns-10 {
-    grid-template-columns: repeat(10, 1fr); }
-  .elementor-element.elementor-products-grid .woocommerce.columns-10 ul.products {
-    grid-template-columns: repeat(10, 1fr); }
-  .elementor-element.elementor-products-grid ul.products.columns-11 {
-    grid-template-columns: repeat(11, 1fr); }
-  .elementor-element.elementor-products-grid .woocommerce.columns-11 ul.products {
-    grid-template-columns: repeat(11, 1fr); }
-  .elementor-element.elementor-products-grid ul.products.columns-12 {
-    grid-template-columns: repeat(12, 1fr); }
-  .elementor-element.elementor-products-grid .woocommerce.columns-12 ul.products {
-    grid-template-columns: repeat(12, 1fr); } }
-
-@media (max-width: 1024px) {
-  .elementor-element.elementor-products-grid ul.products {
-    grid-template-columns: repeat(3, 1fr); } }
-
-@media (max-width: 767px) {
-  .elementor-element.elementor-products-grid ul.products {
-    grid-template-columns: repeat(2, 1fr); } }
-
-@media (min-width: 1025px) {
-  .elementor-element.elementor-products-grid.elementor-products-columns-1 ul.products {
-    grid-template-columns: repeat(1, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-2 ul.products {
-    grid-template-columns: repeat(2, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-3 ul.products {
-    grid-template-columns: repeat(3, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-4 ul.products {
-    grid-template-columns: repeat(4, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-5 ul.products {
-    grid-template-columns: repeat(5, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-6 ul.products {
-    grid-template-columns: repeat(6, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-7 ul.products {
-    grid-template-columns: repeat(7, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-8 ul.products {
-    grid-template-columns: repeat(8, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-9 ul.products {
-    grid-template-columns: repeat(9, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-10 ul.products {
-    grid-template-columns: repeat(10, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-11 ul.products {
-    grid-template-columns: repeat(11, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-12 ul.products {
-    grid-template-columns: repeat(12, 1fr); } }
-
-@media (max-width: 1024px) {
-  .elementor-element.elementor-products-grid.elementor-products-columns-tablet-1 ul.products {
-    grid-template-columns: repeat(1, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-tablet-2 ul.products {
-    grid-template-columns: repeat(2, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-tablet-3 ul.products {
-    grid-template-columns: repeat(3, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-tablet-4 ul.products {
-    grid-template-columns: repeat(4, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-tablet-5 ul.products {
-    grid-template-columns: repeat(5, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-tablet-6 ul.products {
-    grid-template-columns: repeat(6, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-tablet-7 ul.products {
-    grid-template-columns: repeat(7, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-tablet-8 ul.products {
-    grid-template-columns: repeat(8, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-tablet-9 ul.products {
-    grid-template-columns: repeat(9, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-tablet-10 ul.products {
-    grid-template-columns: repeat(10, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-tablet-11 ul.products {
-    grid-template-columns: repeat(11, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-tablet-12 ul.products {
-    grid-template-columns: repeat(12, 1fr); } }
-
-@media (max-width: 767px) {
-  .elementor-element.elementor-products-grid.elementor-products-columns-mobile-1 ul.products {
-    grid-template-columns: repeat(1, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-mobile-2 ul.products {
-    grid-template-columns: repeat(2, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-mobile-3 ul.products {
-    grid-template-columns: repeat(3, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-mobile-4 ul.products {
-    grid-template-columns: repeat(4, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-mobile-5 ul.products {
-    grid-template-columns: repeat(5, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-mobile-6 ul.products {
-    grid-template-columns: repeat(6, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-mobile-7 ul.products {
-    grid-template-columns: repeat(7, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-mobile-8 ul.products {
-    grid-template-columns: repeat(8, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-mobile-9 ul.products {
-    grid-template-columns: repeat(9, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-mobile-10 ul.products {
-    grid-template-columns: repeat(10, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-mobile-11 ul.products {
-    grid-template-columns: repeat(11, 1fr); }
-  .elementor-element.elementor-products-grid.elementor-products-columns-mobile-12 ul.products {
-    grid-template-columns: repeat(12, 1fr); } }
 
 .elementor-element.elementor-products-grid ul.products {
   display: grid;
@@ -2551,7 +2419,8 @@ the source property is coming from element/dev/scss...
       background-color: #f7f7f7; }
     .elementor-cta--skin-classic .elementor-cta__content-item, .elementor-cta--skin-classic .elementor-cta__content-item .elementor-icon {
       color: #55595c;
-      border-color: #55595c; }
+      border-color: #55595c;
+      fill: #55595c; }
     .elementor-cta--skin-classic .elementor-cta__button.elementor-button {
       color: #55595c;
       border-color: #55595c; }
@@ -2684,33 +2553,6 @@ the source property is coming from element/dev/scss...
 @media (max-device-width: 1024px) {
   .elementor-cta {
     cursor: pointer; } }
-
-@media (min-width: 1025px) {
-  .elementor-cta--desktop-layout-image-above .elementor-cta {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap; }
-    .elementor-cta--desktop-layout-image-above .elementor-cta__bg-wrapper {
-      width: 100%; }
-  .elementor-cta--desktop-layout-image-left .elementor-cta, .elementor-cta--desktop-layout-image-right .elementor-cta {
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap; }
-    .elementor-cta--desktop-layout-image-left .elementor-cta__bg-wrapper, .elementor-cta--desktop-layout-image-right .elementor-cta__bg-wrapper {
-      width: auto;
-      min-width: 50%; }
-    .elementor-cta--desktop-layout-image-left .elementor-cta__content, .elementor-cta--desktop-layout-image-right .elementor-cta__content {
-      -webkit-box-flex: 1;
-          -ms-flex-positive: 1;
-              flex-grow: 1; }
-  .elementor-cta--desktop-layout-image-left .elementor-cta {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse; }
-  .elementor-cta--desktop-layout-image-right .elementor-cta {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row; } }
 
 @media (max-width: 1024px) {
   .elementor-cta--tablet-layout-image-above .elementor-cta {
@@ -6117,7 +5959,8 @@ ol.elementor-toc__list-wrapper {
     display: -ms-flexbox;
     display: flex;
     position: relative;
-    overflow: hidden; }
+    overflow: hidden;
+    z-index: 1; }
     .e-tabs-inner-tabs .e-inner-tabs-wrapper :after {
       content: '';
       width: 100%;
@@ -6175,7 +6018,7 @@ ol.elementor-toc__list-wrapper {
     .e-tabs-inner-tabs .e-inner-tabs-content-wrapper .e-inner-tab-content.show-full-height div.e-inner-tab-text {
       height: auto; }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .e-tabs-inner-tabs > .e-tab-content:first-child {
     padding-top: 24px; }
   .e-tabs-inner-tabs .e-inner-tabs-wrapper {
@@ -6212,7 +6055,7 @@ ol.elementor-toc__list-wrapper {
       -ms-flex-direction: row;
           flex-direction: row; }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .elementor-widget-video-playlist.elementor-layout-end .e-tabs-main-area {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -6489,7 +6332,7 @@ ol.elementor-toc__list-wrapper {
     display: none;
     outline: none; }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .elementor-widget-video-playlist .e-tabs-main-area {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
