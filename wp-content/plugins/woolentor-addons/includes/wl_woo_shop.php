@@ -159,23 +159,34 @@ class Woolentor_Woo_Custom_Template_Layout{
         if ( defined('WOOCOMMERCE_VERSION') ) {
             $termobj = get_queried_object();
             $get_all_taxonomies = woolentor_get_taxonomies();
+            
             if ( is_shop() || ( is_tax('product_cat') && is_product_category() ) || ( is_tax('product_tag') && is_product_tag() ) || ( isset( $termobj->taxonomy ) && is_tax( $termobj->taxonomy ) && array_key_exists( $termobj->taxonomy, $get_all_taxonomies ) ) ) {
-                $product_achive_custom_page_id = woolentor_get_option( 'productarchivepage', 'woolentor_woo_template_tabs', '0' );
+                $product_shop_custom_page_id = woolentor_get_option( 'productarchivepage', 'woolentor_woo_template_tabs', '0' );
 
-                // Meta value
+                // Archive Layout Control
                 $wltermlayoutid = 0;
                 if(( is_tax('product_cat') && is_product_category() ) || ( is_tax('product_tag') && is_product_tag() )){
+
+                    $product_archive_custom_page_id = woolentor_get_option( 'productallarchivepage', 'woolentor_woo_template_tabs', '0' );
+
+                    // Get Meta Value
                     $wltermlayoutid = get_term_meta( $termobj->term_id, 'wooletor_selectcategory_layout', true ) ? get_term_meta( $termobj->term_id, 'wooletor_selectcategory_layout', true ) : '0';
+
+                    if( !empty( $product_archive_custom_page_id ) && $wltermlayoutid == '0' ){
+                        $wltermlayoutid = $product_archive_custom_page_id;
+                    }
+
                 }
                 if( $wltermlayoutid != '0' ){ 
                     $archive_template_id = $wltermlayoutid; 
                 }else{
-                    if (!empty($product_achive_custom_page_id)) {
-                        $archive_template_id = $product_achive_custom_page_id;
+                    if ( !empty( $product_shop_custom_page_id ) ) {
+                        $archive_template_id = $product_shop_custom_page_id;
                     }
                 }
                 return $archive_template_id;
             }
+
             return $archive_template_id;
         }
     }

@@ -46,8 +46,8 @@ class Woolentor_Extension_Manager{
 
     	if ( ! function_exists('plugins_api') ){ include_once( ABSPATH . 'wp-admin/includes/plugin-install.php' ); }
 
-    	$htplugins_plugins_list = $this->get_plugins();
-    	$palscode_plugins_list = $this->get_plugins( 'palscode' );
+    	$htplugins_plugins_list = !empty( $this->get_plugins() ) ? $this->get_plugins() : array();
+    	$palscode_plugins_list = !empty( $this->get_plugins( 'palscode' ) ) ? $this->get_plugins( 'palscode' ) : array();
 
     	$org_plugins_list = array_merge( $htplugins_plugins_list, $palscode_plugins_list );
 
@@ -272,42 +272,45 @@ class Woolentor_Extension_Manager{
 		                    $button_text    = esc_html__( 'Activated', 'woolentor' );
 		                }
 
-		                ?>
+		                if( !empty( $data['slug'] ) && isset( $prepare_plugin[$data['slug']] ) ){
 
-	                    <div class="plugin-card htwptemplata-plugin-<?php echo $data['slug']; ?>">
+			                ?>
 
-							<div class="plugin-card-top">
-								<div class="name column-name" style="margin-right: 0;">
-									<h3>
-										<a href="<?php echo esc_url( admin_url() ) ?>/plugin-install.php?tab=plugin-information&plugin=<?php echo $data['slug']; ?>&TB_iframe=true&width=772&height=577" class="thickbox open-plugin-details-modal">
-											<?php echo $prepare_plugin[$data['slug']]['name']; ?>
-											<img src="<?php echo $prepare_plugin[$data['slug']]['icons']['1x']; ?>" class="plugin-icon" alt="<?php echo $prepare_plugin[$data['slug']]['name']; ?>">
-										</a>
-									</h3>
+		                    <div class="plugin-card htwptemplata-plugin-<?php echo $data['slug']; ?>">
+
+								<div class="plugin-card-top">
+									<div class="name column-name" style="margin-right: 0;">
+										<h3>
+											<a href="<?php echo esc_url( admin_url() ) ?>/plugin-install.php?tab=plugin-information&plugin=<?php echo $data['slug']; ?>&TB_iframe=true&width=772&height=577" class="thickbox open-plugin-details-modal">
+												<?php echo $prepare_plugin[$data['slug']]['name']; ?>
+												<img src="<?php echo $prepare_plugin[$data['slug']]['icons']['1x']; ?>" class="plugin-icon" alt="<?php echo $prepare_plugin[$data['slug']]['name']; ?>">
+											</a>
+										</h3>
+									</div>
+									<div class="desc column-description" style="margin-right: 0;">
+										<p><?php echo wp_trim_words( $prepare_plugin[$data['slug']]['description'], 23, '....'); ?></p>
+										<p class="authors"> <cite><?php echo esc_html__( 'By ', 'woolentor' ).$prepare_plugin[$data['slug']]['author']; ?></cite></p>
+									</div>
 								</div>
-								<div class="desc column-description" style="margin-right: 0;">
-									<p><?php echo wp_trim_words( $prepare_plugin[$data['slug']]['description'], 23, '....'); ?></p>
-									<p class="authors"> <cite><?php echo esc_html__( 'By ', 'woolentor' ).$prepare_plugin[$data['slug']]['author']; ?></cite></p>
+
+								<div class="plugin-card-bottom">
+									<div class="column-updated">
+										<button class="<?php echo $button_classes; ?>" data-pluginopt='<?php echo wp_json_encode( $data ); ?>'><?php echo $button_text; ?></button>
+									</div>
+									<div class="column-downloaded">
+										<a href="<?php echo esc_url( admin_url() ) ?>/plugin-install.php?tab=plugin-information&plugin=<?php echo $data['slug']; ?>&TB_iframe=true&width=772&height=577" class="thickbox open-plugin-details-modal"><?php echo esc_html__( 'More Details', 'woolentor' ); ?></a>
+										<span class="downloaded-count">
+	                                        <?php
+	                                            printf( __( '%s Active Installations' ), $this->active_install_count( $prepare_plugin[$data['slug']]['active_installs'] ) );
+	                                        ?>
+	                                    </span>
+									</div>
 								</div>
+
 							</div>
 
-							<div class="plugin-card-bottom">
-								<div class="column-updated">
-									<button class="<?php echo $button_classes; ?>" data-pluginopt='<?php echo wp_json_encode( $data ); ?>'><?php echo $button_text; ?></button>
-								</div>
-								<div class="column-downloaded">
-									<a href="<?php echo esc_url( admin_url() ) ?>/plugin-install.php?tab=plugin-information&plugin=<?php echo $data['slug']; ?>&TB_iframe=true&width=772&height=577" class="thickbox open-plugin-details-modal"><?php echo esc_html__( 'More Details', 'woolentor' ); ?></a>
-									<span class="downloaded-count">
-                                        <?php
-                                            printf( __( '%s Active Installations' ), $this->active_install_count( $prepare_plugin[$data['slug']]['active_installs'] ) );
-                                        ?>
-                                    </span>
-								</div>
-							</div>
-
-						</div>
-
-		                <?php
+			                <?php
+			            }
 
 		            }
 

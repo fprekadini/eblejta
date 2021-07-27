@@ -190,7 +190,7 @@ class Woolentor_Product_Curvy_Layout_Widget extends Widget_Base {
             $this->add_control(
                 'orderby',
                 [
-                    'label'     => esc_html__( 'Orderby', 'woolentor' ),
+                    'label'     => esc_html__( 'Order by', 'woolentor' ),
                     'type'      => Controls_Manager::SELECT,
                     'default'   => 'none',
                     'options'   => [

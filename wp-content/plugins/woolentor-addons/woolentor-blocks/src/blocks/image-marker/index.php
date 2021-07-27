@@ -47,7 +47,7 @@ class WooLentorBlocks_Image_Marker{
 			array(
 				'attributes'  => $metadata['attributes'],
 				'render_callback' => [ $this, 'render_content' ],
-				'editor_style'    => ['woolentor-widgets'],
+				'editor_style'    => 'woolentor-widgets',
 			)
 		);
 

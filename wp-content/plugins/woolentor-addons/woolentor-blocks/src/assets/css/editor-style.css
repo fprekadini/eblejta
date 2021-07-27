@@ -1,3 +1,6 @@
+.wp-block-woolentor-image-marker .wlb_image_pointer .wlb_pointer_box h4{
+    margin-top: 0;
+}
 .wp-core-ui .wp-block-woolentor-product-tab .button:hover{
     background-color: inherit;
     border-radius: 20px;
@@ -123,6 +126,7 @@ h2.woolentor-blocks-section-title {
 /* Background Control */
 .wp-block-selector-woolentor-background-control .components-select-control .components-flex__item,.wp-block-selector-woolentor-background-control .components-select-control .components-input-control__container{
     width: 50% !important;
+    flex: 0 0 50% !important;
 }
 
 /* Repeter Field style */

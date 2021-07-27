@@ -2,8 +2,8 @@
 Contributors: htplugins, hasthemes, tarekht
 Tags: woocommerce, wishlist, product wishlist, wishsuite, woocommerce wishlist
 Requires at least: 4.7
-Tested up to: 5.7.2
-Stable tag: 1.1.3
+Tested up to: 5.8
+Stable tag: 1.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -55,6 +55,9 @@ Superior WooCommerce layout plugin that uses a simple table to display all listi
 The WooLentor WooCommerce Page Builder Addon transforms your old-fashioned eCommerce store into a beautifully designed showroom, ready for all sorts of browsers!
 
 == Changelog ==
+
+= Version: 1.1.4 - Date: 2021-07-24 =
+* Compatibility With WordPress Latest Version.
 
 = Version: 1.1.3 - Date: 2021-06-27 =
 * Solved recommended plugin popup issue.

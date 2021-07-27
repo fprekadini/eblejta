@@ -5,12 +5,12 @@
  * Plugin URI: https://hasthemes.com/plugins/
  * Author: HasTheme
  * Author URI: https://hasthemes.com/
- * Version: 1.1.3
+ * Version: 1.1.4
  * License: GPL2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: wishsuite
  * Domain Path: /languages
- * WC tested up to: 5.4.1
+ * WC tested up to: 5.5.2
  */
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 

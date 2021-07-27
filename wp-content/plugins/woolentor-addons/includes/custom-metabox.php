@@ -23,7 +23,7 @@
                     'id'          => '_saleflash_text',
                     'label'       => __( 'Custom Product Badge Text', 'woolentor' ),
                     'placeholder' => __( 'New', 'woolentor' ),
-                    'description' => __( 'Enter your prefered SaleFlash text. Ex: New / Free etc', 'woolentor' ),
+                    'description' => __( 'Enter your preferred SaleFlash text. Ex: New / Free etc', 'woolentor' ),
                 ) );
             echo '</div>';
         }

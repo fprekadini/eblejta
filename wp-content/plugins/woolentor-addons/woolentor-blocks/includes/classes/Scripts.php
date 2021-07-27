@@ -87,6 +87,8 @@ class Scripts {
             wp_register_script( $handle, $script['src'], $deps, $script['version'], true );
         }
 
+        wp_enqueue_style( 'font-awesome-four' );
+
 		wp_enqueue_style( 'woolentor-block-editor-style', WOOLENTOR_BLOCK_URL . '/src/assets/css/editor-style.css', false, time(), 'all' );
 
 	}

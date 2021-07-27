@@ -82,6 +82,7 @@ ul.htoption_shortable li {
     position: relative;
     box-shadow: 0 0px 4px rgb(0 0 0 / 10%);
     padding: 8px 0 7px 25px;
+    cursor: pointer;
 }
 ul.htoption_shortable li:before {
     position: absolute;

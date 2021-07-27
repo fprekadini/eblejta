@@ -47,8 +47,8 @@ class WooLentorBlocks_Brand_Logo{
 			array(
 				'attributes'  => $metadata['attributes'],
 				'render_callback' => [ $this, 'render_content' ],
-				'editor_style'    => ['woolentor-store-feature'],
-				'style'			  => ['woolentor-store-feature']
+				'editor_style'    => 'woolentor-store-feature',
+				'style'			  => 'woolentor-store-feature'
 			)
 		);
 

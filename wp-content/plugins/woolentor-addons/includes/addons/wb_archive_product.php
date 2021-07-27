@@ -483,7 +483,7 @@ class Woolentor_Elementor_Widget_Archive_Product extends Widget_Base {
             $this->add_control(
                 'product_rating_color',
                 [
-                    'label' => __( 'Rating Start Color', 'woolentor' ),
+                    'label' => __( 'Rating Star Color', 'woolentor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}}.elementor-widget-woolentor-product-archive-addons ul.products li.product .star-rating' => 'color: {{VALUE}}',
@@ -495,7 +495,7 @@ class Woolentor_Elementor_Widget_Archive_Product extends Widget_Base {
             $this->add_control(
                 'product_empty_rating_color',
                 [
-                    'label' => __( 'Empty Rating Start Color', 'woolentor' ),
+                    'label' => __( 'Empty Rating Star Color', 'woolentor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}}.elementor-widget-woolentor-product-archive-addons ul.products li.product .star-rating::before' => 'color: {{VALUE}}',

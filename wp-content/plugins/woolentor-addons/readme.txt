@@ -2,8 +2,8 @@
 Contributors: hasthemes, htplugins, devitemsllc, tarekht
 Tags: Elementor, WooCommerce, WooCommerce Elementor, WooCommerce Builder, WooCommerce Product
 Requires at least: 4.7
-Tested up to: 5.7.2
-Stable tag: 1.9.1
+Tested up to: 5.8
+Stable tag: 1.9.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -321,6 +321,16 @@ Feel free to [Contact us](https://hasthemes.com/contact-us/)
 Elementor Pro is not required. But you can use wooLentor with Elementor free & Pro.
 
 == Changelog ==
+
+= Version: 1.9.3 - Date: 2021-27-07 =
+* Added Title tag change option in universal layout
+* Added Product Archive page template override global option
+* Solved Variation image showing issue in QuickView
+* Solved Slick slider console error
+
+= Version: 1.9.2 - Date: 2021-24-07 =
+* Compatibility With WordPress Latest Version
+* Compatibility With Elementor Latest Version
 
 = Version: 1.9.1 - Date: 2021-18-07 =
 * Added 5 Gutenberg blocks

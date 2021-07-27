@@ -28,7 +28,7 @@
             var mobile_display_columns = parseInt(settings['mobile_display_columns']) || 1;
             var mobile_scroll_columns = parseInt(settings['mobile_scroll_columns']) || 1;
 
-            slider_elem.slick({
+            slider_elem.not('.slick-initialized').slick({
                 arrows: arrows,
                 prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-angle-left"></i></button>',
                 nextArrow: '<button type="button" class="slick-next"><i class="fa fa-angle-right"></i></button>',
@@ -297,6 +297,41 @@
     function woolentor_render_variation_quick_view_data( $product ) {
         $product.find('.variations_form').wc_variation_form().find('.variations select:eq(0)').change();
         $product.find('.variations_form').trigger('wc_variation_form');
+
+        var $default_data = {
+            src:'',
+            srcfull:'',
+            srcset:'',
+            sizes:'',
+            width:'',
+            height:'',
+        };        
+        $product.find( '.single_variation_wrap' ).on( 'show_variation', function ( event, variation ) {
+
+            // Get First image data
+            if( $default_data.src.length === 0 ){
+                $default_data.src = $('.ht-quick-view-learg-img').find('.wl-quickview-first-image .wp-post-image').attr('src');
+                $default_data.srcset = $('.ht-quick-view-learg-img').find('.wl-quickview-first-image .wp-post-image').attr('srcset');
+                $default_data.srcfull = $('.ht-quick-view-learg-img').find('.wl-quickview-first-image .wp-post-image').attr('data-src');
+            }
+
+            $('.ht-qwick-view-left').find('.ht-quick-view-learg-img').slick('slickGoTo', 0);
+
+            $('.ht-quick-view-learg-img').find('.wl-quickview-first-image .wp-post-image').wc_set_variation_attr('src',variation.image.full_src);
+            $('.ht-quick-view-learg-img').find('.wl-quickview-first-image .wp-post-image').wc_set_variation_attr('srcset',variation.image.srcset);
+            $('.ht-quick-view-learg-img').find('.wl-quickview-first-image .wp-post-image').wc_set_variation_attr('data-src',variation.image.full_src);
+            $('.ht-quick-view-learg-img').find('.wl-quickview-first-image .wp-post-image').wc_set_variation_attr('data-large_image',variation.image.full_src);
+
+            // Reset data
+            $('.variations').find('.reset_variations').on('click', function(e){
+                $('.ht-quick-view-learg-img').find('.wl-quickview-first-image .wp-post-image').wc_set_variation_attr('src', $default_data.src );
+                $('.ht-quick-view-learg-img').find('.wl-quickview-first-image .wp-post-image').wc_set_variation_attr('srcset', $default_data.srcset);
+                $('.ht-quick-view-learg-img').find('.wl-quickview-first-image .wp-post-image').wc_set_variation_attr('data-src', $default_data.srcfull );
+                $('.ht-quick-view-learg-img').find('.wl-quickview-first-image .wp-post-image').wc_set_variation_attr('data-large_image', $default_data.srcfull );
+            });
+
+        });
+
     }
 
     /*

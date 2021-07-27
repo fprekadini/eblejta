@@ -1,4 +1,4 @@
-/*! elementor-pro - v3.3.3 - 20-07-2021 */
+/*! elementor-pro - v3.3.4 - 21-07-2021 */
 (self["webpackChunkelementor_pro"] = self["webpackChunkelementor_pro"] || []).push([["carousel"],{
 
 /***/ "../modules/carousel/assets/js/frontend/handlers/testimonial-carousel.js":

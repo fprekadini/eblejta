@@ -154,7 +154,7 @@ class Woolentor_Product_Tabs_Widget extends Widget_Base {
             $this->add_control(
                 'orderby',
                 [
-                    'label' => esc_html__( 'Orderby', 'woolentor' ),
+                    'label' => esc_html__( 'Order by', 'woolentor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'none',
                     'options' => [
@@ -205,7 +205,7 @@ class Woolentor_Product_Tabs_Widget extends Widget_Base {
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
-                    'description' => esc_html__('When product tab is off, Then working slider.','woolentor'),
+                    'description' => esc_html__('When the product tab is off, Then working slider.','woolentor'),
                 ]
             );
 
@@ -473,7 +473,7 @@ class Woolentor_Product_Tabs_Widget extends Widget_Base {
             $this->add_control(
                 'slautolay',
                 [
-                    'label' => esc_html__( 'Slider auto play', 'woolentor' ),
+                    'label' => esc_html__( 'Slider autoplay', 'woolentor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'separator' => 'before',
@@ -558,7 +558,7 @@ class Woolentor_Product_Tabs_Widget extends Widget_Base {
                 'sltablet_width',
                 [
                     'label' => __('Tablet Resolution', 'woolentor'),
-                    'description' => __('The resolution to tablet.', 'woolentor'),
+                    'description' => __('The resolution to the tablet.', 'woolentor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 750,
                 ]
@@ -1140,7 +1140,7 @@ class Woolentor_Product_Tabs_Widget extends Widget_Base {
                     $this->add_control(
                         'action_button_bg_color',
                         [
-                            'label' => __( 'Backgournd Color', 'woolentor' ),
+                            'label' => __( 'Background Color', 'woolentor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' =>'#ffffff',
                             'selectors' => [
@@ -1200,7 +1200,7 @@ class Woolentor_Product_Tabs_Widget extends Widget_Base {
                     $this->add_control(
                         'action_button_hover_bg_color',
                         [
-                            'label' => __( 'Backgournd Color', 'woolentor' ),
+                            'label' => __( 'Background Color', 'woolentor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' =>'#ffffff',
                             'selectors' => [

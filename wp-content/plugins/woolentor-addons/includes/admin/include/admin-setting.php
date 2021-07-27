@@ -153,8 +153,18 @@ class Woolentor_Admin_Settings {
 
                 array(
                     'name'    => 'productarchivepage',
-                    'label'   => __( 'Product Archive Page Template', 'woolentor' ),
+                    'label'   => __( 'Product Shop Page Template', 'woolentor' ),
                     'desc'    => __( 'You can select a custom template for the Shop page layout', 'woolentor' ),
+                    'type'    => 'select',
+                    'default' => '0',
+                    'options' => woolentor_elementor_template(),
+                    'class' => 'depend_enable_custom_layout',
+                ),
+
+                array(
+                    'name'    => 'productallarchivepage',
+                    'label'   => __( 'Product Archive Page Template', 'woolentor' ),
+                    'desc'    => __( 'You can select a custom template for the Product Archive page layout', 'woolentor' ),
                     'type'    => 'select',
                     'default' => '0',
                     'options' => woolentor_elementor_template(),
@@ -888,7 +898,7 @@ class Woolentor_Admin_Settings {
                     'label'       => __( 'Additional Information', 'woolentor' ),
                     'desc'        => __( 'Change the tab title for the product additional information <span>( Pro )</span>', 'woolentor' ),
                     'type'        => 'text',
-                    'placeholder' => __( 'Additiona information', 'woolentor' ),
+                    'placeholder' => __( 'Additional information', 'woolentor' ),
                     'class'       => 'proelement depend_enable_rename_label',
                 ),
                 
@@ -1888,7 +1898,7 @@ class Woolentor_Admin_Settings {
             <div class="woolentor-admin-tab-area">
                 <ul class="woolentor-admin-tabs">
                     <li><a href="#oneyear"><?php echo esc_html__( 'One Year', 'woolentor' ); ?></a></li>
-                    <li><a href="#lifetime" class="wlactive"><?php echo esc_html__( 'Life Time', 'woolentor' ); ?></a></li>
+                    <li><a href="#lifetime" class="wlactive"><?php echo esc_html__( 'Lifetime', 'woolentor' ); ?></a></li>
                 </ul>
             </div>
             
@@ -1914,15 +1924,15 @@ class Woolentor_Admin_Settings {
                 
                 <div class="woolentor-admin-row">
                     <div class="woolentor-price-plan">
-                        <a href="https://hasthemes.com/plugins/woolentor-pro-woocommerce-page-builder/?db" target="_blank"><img src="https://woolentor.com/pricing/admin-add/life_time_single_website.png" alt="<?php echo esc_attr__( 'Life Time Single Website','woolentor' );?>"></a>
+                        <a href="https://hasthemes.com/plugins/woolentor-pro-woocommerce-page-builder/?db" target="_blank"><img src="https://woolentor.com/pricing/admin-add/life_time_single_website.png" alt="<?php echo esc_attr__( 'Lifetime Single Website','woolentor' );?>"></a>
                     </div>
 
                     <div class="woolentor-price-plan">
-                        <a href="https://hasthemes.com/plugins/woolentor-pro-woocommerce-page-builder/?db" target="_blank"><img src="https://woolentor.com/pricing/admin-add/life_time_five_website.png" alt="<?php echo esc_attr__( 'Life time Unlimited Website','woolentor' );?>"></a>
+                        <a href="https://hasthemes.com/plugins/woolentor-pro-woocommerce-page-builder/?db" target="_blank"><img src="https://woolentor.com/pricing/admin-add/life_time_five_website.png" alt="<?php echo esc_attr__( 'Lifetime Unlimited Website','woolentor' );?>"></a>
                     </div>
 
                     <div class="woolentor-price-plan">
-                        <a href="https://hasthemes.com/plugins/woolentor-pro-woocommerce-page-builder/?db" target="_blank"><img src="https://woolentor.com/pricing/admin-add/life_time_agency.png" alt="<?php echo esc_attr__( 'Life Time Unlimited Websites','woolentor' );?>"></a>
+                        <a href="https://hasthemes.com/plugins/woolentor-pro-woocommerce-page-builder/?db" target="_blank"><img src="https://woolentor.com/pricing/admin-add/life_time_agency.png" alt="<?php echo esc_attr__( 'Lifetime Unlimited Websites','woolentor' );?>"></a>
                     </div>
                 </div>
 

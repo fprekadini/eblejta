@@ -195,7 +195,7 @@ class Woolentor_Elementor_Widget_Special_day_Banner extends Widget_Base {
                 $this->add_responsive_control(
                     'badge_x_position',
                     [
-                        'label' => __( 'Horizontal Postion', 'woolentor' ),
+                        'label' => __( 'Horizontal Position', 'woolentor' ),
                         'type' => Controls_Manager::SLIDER,
                         'size_units' => [ 'px', '%' ],
                         'default' => [
@@ -224,7 +224,7 @@ class Woolentor_Elementor_Widget_Special_day_Banner extends Widget_Base {
                 $this->add_responsive_control(
                     'badge_y_position',
                     [
-                        'label' => __( 'Vertical Postion', 'woolentor' ),
+                        'label' => __( 'Vertical Position', 'woolentor' ),
                         'type' => Controls_Manager::SLIDER,
                         'size_units' => [ 'px', '%' ],
                         'default' => [

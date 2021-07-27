@@ -1,5 +1,8 @@
 # Elementor Pro - by Elementor.com
 
+#### 3.3.4 - 2021-07-21
+* Fix: Grid layout glitch in WooCommerce Products Archive widget ([#15718](https://github.com/elementor/elementor/issues/15718))
+
 #### 3.3.3 - 2021-07-20
 * Tweak: Added a descriptive message in Collect Submissions action after submit
 * Tweak: Added future compatibility for Additional Custom Breakpoints for Pro widgets

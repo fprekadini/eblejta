@@ -336,7 +336,7 @@ class WL_Testimonial_Element extends Widget_Base {
             $this->add_control(
                 'slautolay',
                 [
-                    'label' => esc_html__( 'Slider auto play', 'woolentor' ),
+                    'label' => esc_html__( 'Slider autoplay', 'woolentor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'separator' => 'before',
@@ -415,7 +415,7 @@ class WL_Testimonial_Element extends Widget_Base {
                 'sltablet_width',
                 [
                     'label' => __('Tablet Resolution', 'woolentor'),
-                    'description' => __('The resolution to tablet.', 'woolentor'),
+                    'description' => __('The resolution to the tablet.', 'woolentor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 750,
                 ]

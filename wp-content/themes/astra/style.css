@@ -60,14 +60,17 @@ Astra local fonts feature is based on Webfonts Loader by WordPress Themes Team (
 Licensed under MIT ( https://github.com/WPTT/webfont-loader/blob/master/LICENSE )
 
 /* Note: The CSS files are loaded from assets/css/ folder. */
-.elementor-headline-dynamic-text .elementor-headline-text-active{
+
+.elementor-headline-dynamic-text .elementor-headline-text-active {
     font-size: 16px;
     margin-left: 10px;
 }
-.eicon-chevron-left{
+
+.eicon-chevron-left {
     top: 0px;
     background-color: red;
 }
-.ht-product-inner{
+
+.ht-product-inner {
     padding: 5rem;
 }

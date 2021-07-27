@@ -43,7 +43,7 @@ class WL_Product_Video_Gallery_ELement extends Widget_Base {
          $this->start_controls_section(
             'product_thumbnails_content',
             array(
-                'label' => __( 'Video Thumbanails', 'woolentor' ),
+                'label' => __( 'Video Thumbnails', 'woolentor' ),
                 'tab' => Controls_Manager::TAB_CONTENT,
             )
         );

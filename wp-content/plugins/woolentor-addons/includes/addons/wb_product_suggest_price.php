@@ -164,8 +164,8 @@ class WL_Product_Suggest_Price_Element extends Widget_Base {
                     [
                         'label' => __( 'Success Message', 'woolentor' ),
                         'type' => Controls_Manager::TEXT,
-                        'default' => __( 'Thank you contacting with us', 'woolentor' ),
-                        'placeholder' => __( 'Thank you contacting with us', 'woolentor' ),
+                        'default' => __( 'Thank you for contacting with us', 'woolentor' ),
+                        'placeholder' => __( 'Thank you for contacting with us', 'woolentor' ),
                         'label_block'=>true,
                         'separator'=>'before',
                     ]
@@ -176,8 +176,8 @@ class WL_Product_Suggest_Price_Element extends Widget_Base {
                     [
                         'label' => __( 'Error Message', 'woolentor' ),
                         'type' => Controls_Manager::TEXT,
-                        'default' => __( 'Something is wrong ! try again', 'woolentor' ),
-                        'placeholder' => __( 'Something is wrong ! try again', 'woolentor' ),
+                        'default' => __( 'Something is wrong! try again', 'woolentor' ),
+                        'placeholder' => __( 'Something is wrong! try again', 'woolentor' ),
                         'label_block'=>true,
                     ]
                 );

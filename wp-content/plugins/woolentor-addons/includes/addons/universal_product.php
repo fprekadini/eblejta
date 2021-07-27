@@ -243,6 +243,16 @@ class Woolentor_Universal_Product_Layout_Widget extends Widget_Base {
             );
 
             $this->add_control(
+                'product_title_html_tag',
+                [
+                    'label'   => __( 'Title HTML Tag', 'woolentor' ),
+                    'type'    => Controls_Manager::SELECT,
+                    'options' => woolentor_html_tag_lists(),
+                    'default' => 'h4',
+                ]
+            );
+
+            $this->add_control(
                 'hide_product_title',
                 [
                     'label'     => __( 'Hide Title', 'woolentor' ),
@@ -692,7 +702,7 @@ class Woolentor_Universal_Product_Layout_Widget extends Widget_Base {
             $this->add_control(
                 'slautolay',
                 [
-                    'label' => esc_html__( 'Slider auto play', 'woolentor' ),
+                    'label' => esc_html__( 'Slider autoplay', 'woolentor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'separator' => 'before',
@@ -774,7 +784,7 @@ class Woolentor_Universal_Product_Layout_Widget extends Widget_Base {
                 'sltablet_width',
                 [
                     'label' => __('Tablet Resolution', 'woolentor'),
-                    'description' => __('The resolution to tablet.', 'woolentor'),
+                    'description' => __('The resolution to the tablet.', 'woolentor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 750,
                 ]
@@ -2194,6 +2204,8 @@ class Woolentor_Universal_Product_Layout_Widget extends Widget_Base {
             $this->add_render_attribute( 'action_btn_attr', 'class', 'woolentor-btn-text-cart' );
         }
 
+        $title_html_tag = woolentor_validate_html_tag( $settings['product_title_html_tag'] );
+
         ?>
             <?php if ( $settings['product_layout_style'] == 'tab' ) { ?>
                 <div class="product-tab-list ht-text-center">
@@ -2401,7 +2413,7 @@ class Woolentor_Universal_Product_Layout_Widget extends Widget_Base {
                                             <div class="ht-product-content">
                                                 <div class="ht-product-content-inner">
                                                     <div class="ht-product-categories"><?php woolentor_get_product_category_list(); ?></div>
-                                                    <h4 class="ht-product-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                                                    <?php echo sprintf( "<%s class='ht-product-title'><a href='%s'>%s</a></%s>", $title_html_tag, get_the_permalink(), get_the_title(), $title_html_tag ); ?>
                                                     <div class="ht-product-price"><?php woocommerce_template_loop_price();?></div>
                                                     <div class="ht-product-ratting-wrap"><?php echo woolentor_wc_get_rating_html(); ?></div>
 
@@ -2584,7 +2596,7 @@ class Woolentor_Universal_Product_Layout_Widget extends Widget_Base {
                                     <div class="ht-product-content">
                                         <div class="ht-product-content-inner">
                                             <div class="ht-product-categories"><?php woolentor_get_product_category_list(); ?></div>
-                                            <h4 class="ht-product-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                                            <?php echo sprintf( "<%s class='ht-product-title'><a href='%s'>%s</a></%s>", $title_html_tag, get_the_permalink(), get_the_title(), $title_html_tag ); ?>
                                             <div class="ht-product-price"><?php woocommerce_template_loop_price();?></div>
                                             <div class="ht-product-ratting-wrap"><?php echo woolentor_wc_get_rating_html(); ?></div>
 

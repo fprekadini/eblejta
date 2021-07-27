@@ -8,8 +8,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 global $product;
-$post_thumbnail_id = $product->get_image_id();
-$attachment_ids = $product->get_gallery_image_ids();
+// $post_thumbnail_id = $product->get_image_id();
+// $attachment_ids = $product->get_gallery_image_ids();
+
+$attachment_ids = $product->get_gallery_image_ids() ? $product->get_gallery_image_ids() : array();
+if ( $product->get_image_id() ){
+    $attachment_ids = array( 'wlquick_thumbnail_id' => $product->get_image_id() ) + $attachment_ids;
+}
+
+// Placeholder image set
+if( empty( $attachment_ids ) ){
+    $attachment_ids = array( 'wlquick_thumbnail_id' => get_option( 'woocommerce_placeholder_image', 0 ) );
+}
 
 ?>
 <div <?php wc_product_class( 'ht-row' ); ?>>
@@ -17,40 +27,26 @@ $attachment_ids = $product->get_gallery_image_ids();
     <div class="ht-col-md-5 ht-col-sm-5 ht-col-xs-12">
     	<div class="ht-qwick-view-left">
             <div class="ht-quick-view-learg-img">
-                <?php if ( has_post_thumbnail() ): ?>
-                    <div class="ht-quick-view-single">
-                        <?php 
-                            $html = wc_get_gallery_image_html( $post_thumbnail_id, true );
-                            echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id );
-                        ?>
-                    </div>
-                <?php endif; 
+                <?php 
                     if ( $attachment_ids ) {
+                        $i = 0;
                         foreach ( $attachment_ids as $attachment_id ) {
-                            ?>
-                                <div class="ht-quick-view-single">
-                                    <?php 
-                                        $html = wc_get_gallery_image_html( $attachment_id, true );
-                                        echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $attachment_id );
-                                    ?>
-                                </div>
-                            <?php
+                            $i++;
+
+                            $html = wc_get_gallery_image_html( $attachment_id, true );
+
+                            if( $i == 1 ){
+                                echo '<div class="ht-quick-view-single wl-quickview-first-image">'.apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $attachment_id ).'</div>';
+                            }else{
+                                echo '<div class="ht-quick-view-single">'.apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $attachment_id ).'</div>';
+                            }
+
                         }
                     }
                 ?>
             </div>
 
             <div class="ht-quick-view-thumbnails">
-                <?php if ( has_post_thumbnail() ): ?>
-                    
-                    <div class="ht-quick-thumb-single">
-                        <?php
-                            $thumbnail_src = wp_get_attachment_image_src( $post_thumbnail_id, 'woocommerce_gallery_thumbnail' );
-                            echo '<img src=" '.$thumbnail_src[0].' " alt="'.get_the_title().'">';
-                        ?>
-                    </div>
-                    
-                <?php endif; ?>
                 <?php
                     if ( $attachment_ids && $product->get_image_id() ) {
                         foreach ( $attachment_ids as $attachment_id ) {

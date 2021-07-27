@@ -222,12 +222,12 @@ class Recommended_Plugins {
                                     $modal_class  = 'class="thickbox open-plugin-details-modal"';
 
                                 }else{
-                                    $plugins_type = 'pro';
-                                    $image_url     = $this->plugin_icon( $plugins_type, $plugin['slug'] );
-                                    $description    = $plugin['description'];
+                                    $plugins_type   = 'pro';
+                                    $image_url      = $this->plugin_icon( $plugins_type, $plugin['slug'] );
+                                    $description    = isset( $plugin['description'] ) ? $plugin['description'] : '';
                                     $author_name    = esc_html__( 'HasTheme', $this->text_domain );
-                                    $author_link    = $plugin['author_link'];
-                                    $details_link   = $plugin['link'];
+                                    $author_link    = isset( $plugin['author_link'] ) ? $plugin['author_link'] : '';
+                                    $details_link   = isset( $plugin['link'] ) ? $plugin['link'] : '';
                                     $button_text    = esc_html__('Buy Now', $this->text_domain );
                                     $button_classes = 'button button-primary';
                                     $target         = '_blank';
