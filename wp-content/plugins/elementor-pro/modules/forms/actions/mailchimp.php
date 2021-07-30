@@ -238,11 +238,11 @@ class Mailchimp extends Integration_Base {
 		// Build the request tags.
 		$request_tags = [];
 
-		// Set current tags to active.
+		// Set current tags to inactive.
 		foreach ( $subscriber['tags'] as $tag ) {
 			$request_tags[] = [
 				'name' => $tag['name'],
-				'status' => 'active',
+				'status' => 'inactive',
 			];
 		}
 

@@ -1,37 +1,25 @@
 <?php
-function register_nav()
+// Define Constants
+define('CHILD_THEME_eblejta_VERSION', '1.0.0');
+//  Enqueue styles
+function child_enqueue_styles()
 {
-    register_nav_menus(
-        array(
-            'header' => 'Header'
-        )
-    );
-    register_nav_menus(
-        array(
-            'footer' => 'Footer'
-        )
-    );
-    register_nav_menus(
-        array(
-            '404' => '404'
-        )
-    );
+    wp_enqueue_style('eblejta-theme-css', get_stylesheet_directory_uri() . '/style.css', array('astra-theme-css'), CHILD_THEME_eblejta_VERSION, 'all');
 }
-if (!function_exists('setup')) :
-    function setup()
-    {
-        register_nav();
-        add_theme_support('post-thumbnails');
-        add_image_size('team', 475, 475, array('center', 'center'));
-    }
-endif;
-function scripts_header()
+add_action('wp_enqueue_scripts', 'child_enqueue_styles', 15);
+
+//  Add a new country to countries list
+add_filter('woocommerce_countries',  'handsome_bearded_guy_add_my_country');
+function handsome_bearded_guy_add_my_country($countries)
 {
-    wp_enqueue_style('init', get_stylesheet_uri());
+    $new_countries = array(
+        'XK'  => __('KOSOVO', 'woocommerce'),
+    );
+    return array_merge($countries, $new_countries);
 }
-function scripts_footer()
+add_filter('woocommerce_continents', 'handsome_bearded_guy_add_my_country_to_continents');
+function handsome_bearded_guy_add_my_country_to_continents($continents)
 {
-    // wp_enqueue_script('init', get_template_directory_uri().'js/init.js', array('jquery'));
+    $continents['EU']['countries'][] = 'XK';
+    return $continents;
 }
-add_action('after_setup_theme', 'setup');
-add_action('wp_enqueue_scripts', 'scripts_header'); 

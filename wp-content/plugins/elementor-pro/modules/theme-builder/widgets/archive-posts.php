@@ -38,10 +38,6 @@ class Archive_Posts extends Posts_Base {
 		return [ 'posts', 'cpt', 'archive', 'loop', 'query', 'cards', 'custom post type' ];
 	}
 
-	public function get_inline_css_depends() {
-		return [ 'posts' ];
-	}
-
 	protected function register_skins() {
 		$this->add_skin( new Skins\Posts_Archive_Skin_Classic( $this ) );
 		$this->add_skin( new Skins\Posts_Archive_Skin_Cards( $this ) );

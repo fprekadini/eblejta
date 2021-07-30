@@ -1,4 +1,4 @@
-/*! elementor-pro - v3.3.4 - 21-07-2021 */
+/*! elementor-pro - v3.3.1 - 20-06-2021 */
 (self["webpackChunkelementor_pro"] = self["webpackChunkelementor_pro"] || []).push([["preloaded-elements-handlers"],{
 
 /***/ "../node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js":
@@ -712,8 +712,6 @@ exports.default = void 0;
 
 var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/regenerator */ "../node_modules/@babel/runtime/regenerator/index.js"));
 
-var _keys = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "../node_modules/@babel/runtime-corejs2/core-js/object/keys.js"));
-
 __webpack_require__(/*! core-js/modules/es6.array.find.js */ "../node_modules/core-js/modules/es6.array.find.js");
 
 __webpack_require__(/*! core-js/modules/es6.regexp.match.js */ "../node_modules/core-js/modules/es6.regexp.match.js");
@@ -812,8 +810,6 @@ var CarouselBase = /*#__PURE__*/function (_elementorModules$fro) {
   }, {
     key: "getSwiperOptions",
     value: function getSwiperOptions() {
-      var _this = this;
-
       var elementSettings = this.getElementSettings();
       var swiperOptions = {
         grabCursor: true,
@@ -846,14 +842,17 @@ var CarouselBase = /*#__PURE__*/function (_elementorModules$fro) {
 
       if ('cube' !== this.getEffect()) {
         var breakpointsSettings = {},
-            breakpoints = elementorFrontend.config.responsive.activeBreakpoints;
-        (0, _keys.default)(breakpoints).forEach(function (breakpointName) {
-          breakpointsSettings[breakpoints[breakpointName].value] = {
-            slidesPerView: _this.getSlidesPerView(breakpointName),
-            slidesPerGroup: _this.getSlidesToScroll(breakpointName),
-            spaceBetween: _this.getSpaceBetween(breakpointName)
-          };
-        });
+            breakpoints = elementorFrontend.config.breakpoints;
+        breakpointsSettings[breakpoints.lg - 1] = {
+          slidesPerView: this.getSlidesPerView('tablet'),
+          slidesPerGroup: this.getSlidesToScroll('tablet'),
+          spaceBetween: this.getSpaceBetween('tablet')
+        };
+        breakpointsSettings[breakpoints.md - 1] = {
+          slidesPerView: this.getSlidesPerView('mobile'),
+          slidesPerGroup: this.getSlidesToScroll('mobile'),
+          spaceBetween: this.getSpaceBetween('mobile')
+        };
         swiperOptions.breakpoints = breakpointsSettings;
       }
 
@@ -867,29 +866,19 @@ var CarouselBase = /*#__PURE__*/function (_elementorModules$fro) {
       return swiperOptions;
     }
   }, {
-    key: "getDeviceBreakpointValue",
-    value: function getDeviceBreakpointValue(device) {
-      var _this2 = this;
-
-      if (!this.breakpointsDictionary) {
-        var breakpoints = elementorFrontend.config.responsive.activeBreakpoints;
-        this.breakpointsDictionary = {};
-        (0, _keys.default)(breakpoints).forEach(function (breakpointName) {
-          _this2.breakpointsDictionary[breakpointName] = breakpoints[breakpointName].value;
-        });
-      }
-
-      return this.breakpointsDictionary[device];
-    }
-  }, {
     key: "updateSpaceBetween",
     value: function updateSpaceBetween(propertyName) {
       var deviceMatch = propertyName.match('space_between_(.*)'),
           device = deviceMatch ? deviceMatch[1] : 'desktop',
-          newSpaceBetween = this.getSpaceBetween(device);
+          newSpaceBetween = this.getSpaceBetween(device),
+          breakpoints = elementorFrontend.config.breakpoints;
 
       if ('desktop' !== device) {
-        this.swiper.params.breakpoints[this.getDeviceBreakpointValue(device)].spaceBetween = newSpaceBetween;
+        var breakpointDictionary = {
+          tablet: breakpoints.lg - 1,
+          mobile: breakpoints.md - 1
+        };
+        this.swiper.params.breakpoints[breakpointDictionary[device]].spaceBetween = newSpaceBetween;
       } else {
         this.swiper.params.spaceBetween = newSpaceBetween;
       }
@@ -1083,8 +1072,6 @@ var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime
 
 __webpack_require__(/*! core-js/modules/es6.array.find.js */ "../node_modules/core-js/modules/es6.array.find.js");
 
-var _keys = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "../node_modules/@babel/runtime-corejs2/core-js/object/keys.js"));
-
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/asyncToGenerator */ "../node_modules/@babel/runtime-corejs2/helpers/asyncToGenerator.js"));
 
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "../node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js"));
@@ -1139,24 +1126,11 @@ var MediaCarousel = /*#__PURE__*/function (_CarouselBase) {
       return defaultSettings;
     }
   }, {
-    key: "getSlidesPerViewSettingNames",
-    value: function getSlidesPerViewSettingNames() {
-      var _this = this;
-
-      if (!this.slideshowElementSettings) {
-        this.slideshowElementSettings = ['slides_per_view'];
-        var activeBreakpoints = elementorFrontend.config.responsive.activeBreakpoints;
-        (0, _keys.default)(activeBreakpoints).forEach(function (breakpointName) {
-          _this.slideshowElementSettings.push('slides_per_view_' + breakpointName);
-        });
-      }
-
-      return this.slideshowElementSettings;
-    }
-  }, {
     key: "getElementSettings",
     value: function getElementSettings(setting) {
-      if (-1 !== this.getSlidesPerViewSettingNames().indexOf(setting) && this.isSlideshow()) {
+      var slideshowSpecialElementSettings = ['slides_per_view', 'slides_per_view_tablet', 'slides_per_view_mobile'];
+
+      if (-1 !== slideshowSpecialElementSettings.indexOf(setting) && this.isSlideshow()) {
         setting = 'slideshow_' + setting;
       }
 
@@ -1219,8 +1193,6 @@ var MediaCarousel = /*#__PURE__*/function (_CarouselBase) {
     key: "onInit",
     value: function () {
       var _onInit = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee() {
-        var _this2 = this;
-
         var slidesCount, elementSettings, loop, breakpointsSettings, breakpoints, desktopSlidesPerView, thumbsSliderOptions, Swiper;
         return _regenerator.default.wrap(function _callee$(_context) {
           while (1) {
@@ -1237,13 +1209,15 @@ var MediaCarousel = /*#__PURE__*/function (_CarouselBase) {
                 return _context.abrupt("return");
 
               case 4:
-                elementSettings = this.getElementSettings(), loop = 'yes' === elementSettings.loop, breakpointsSettings = {}, breakpoints = elementorFrontend.config.responsive.activeBreakpoints, desktopSlidesPerView = this.getDeviceSlidesPerView('desktop');
-                (0, _keys.default)(breakpoints).forEach(function (breakpointName) {
-                  breakpointsSettings[breakpoints[breakpointName].value] = {
-                    slidesPerView: _this2.getDeviceSlidesPerView(breakpointName),
-                    spaceBetween: _this2.getSpaceBetween(breakpointName)
-                  };
-                });
+                elementSettings = this.getElementSettings(), loop = 'yes' === elementSettings.loop, breakpointsSettings = {}, breakpoints = elementorFrontend.config.breakpoints, desktopSlidesPerView = this.getDeviceSlidesPerView('desktop');
+                breakpointsSettings[breakpoints.lg - 1] = {
+                  slidesPerView: this.getDeviceSlidesPerView('tablet'),
+                  spaceBetween: this.getSpaceBetween('tablet')
+                };
+                breakpointsSettings[breakpoints.md - 1] = {
+                  slidesPerView: this.getDeviceSlidesPerView('mobile'),
+                  spaceBetween: this.getSpaceBetween('mobile')
+                };
                 thumbsSliderOptions = {
                   slidesPerView: desktopSlidesPerView,
                   initialSlide: this.getInitialSlide(),
@@ -1256,16 +1230,16 @@ var MediaCarousel = /*#__PURE__*/function (_CarouselBase) {
                   handleElementorBreakpoints: true
                 };
                 Swiper = elementorFrontend.utils.swiper;
-                _context.next = 10;
+                _context.next = 11;
                 return new Swiper(this.elements.$thumbsSwiper, thumbsSliderOptions);
 
-              case 10:
+              case 11:
                 this.swiper.controller.control = this.thumbsSwiper = _context.sent;
                 // Expose the swiper instance in the frontend
                 this.elements.$thumbsSwiper.data('swiper', this.thumbsSwiper);
                 this.thumbsSwiper.controller.control = this.swiper;
 
-              case 13:
+              case 14:
               case "end":
                 return _context.stop();
             }
@@ -1306,8 +1280,6 @@ _Object$defineProperty(exports, "__esModule", {
 
 exports.default = void 0;
 
-var _keys = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "../node_modules/@babel/runtime-corejs2/core-js/object/keys.js"));
-
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "../node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js"));
 
 var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createClass */ "../node_modules/@babel/runtime-corejs2/helpers/createClass.js"));
@@ -1337,11 +1309,10 @@ var TestimonialCarousel = /*#__PURE__*/function (_CarouselBase) {
     value: function getDefaultSettings() {
       var defaultSettings = (0, _get2.default)((0, _getPrototypeOf2.default)(TestimonialCarousel.prototype), "getDefaultSettings", this).call(this);
       defaultSettings.slidesPerView = {
-        desktop: 1
+        desktop: 1,
+        tablet: 1,
+        mobile: 1
       };
-      (0, _keys.default)(elementorFrontend.config.responsive.activeBreakpoints).forEach(function (breakpointName) {
-        defaultSettings.slidesPerView[breakpointName] = 1;
-      });
 
       if (defaultSettings.loop) {
         defaultSettings.loopedSlides = this.getSlidesCount();
