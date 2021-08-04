@@ -91,7 +91,6 @@ if (!defined('ABSPATH')) {
                                     <a href="#">Link 3</a>
                                 </div>
                             </li>
-
                         </ul>
                     </div>
                 </div>
@@ -107,6 +106,7 @@ if (!defined('ABSPATH')) {
                         </a>
                     </div>
                     <div class="header-search-wrap">
+                        
                         <div class="dropdown">
                             <button class="dropbtn">Category</button>
                             <div class="dropdown-content">
@@ -122,10 +122,10 @@ if (!defined('ABSPATH')) {
                     </div>
 
                     <div class="icons col-12 col-md-3 ">
-                        <div class="header-items">
-                            <a href=""><img src="https://img.icons8.com/windows/32/000000/like--v1.png" /></a>
-                            <a href=""><img src="https://img.icons8.com/windows/32/000000/user-male-circle.png" /></a>
-                            <a href=""><img src="https://img.icons8.com/windows/32/000000/user-male-circle.png" /></a>
+                        <div class="header-items">                    
+                            <?php echo do_shortcode('[yith_wcwl_items_count]'); ?>
+                            <?php echo do_shortcode("[woo_cart_but]"); ?>  
+                          
                         </div>
                     </div>
                 </div>

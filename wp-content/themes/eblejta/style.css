@@ -22,12 +22,18 @@
 .top-header .navbar {
     padding: 0.5rem 1rem;
     width: 100%;
+    display: flex;
 }
 
 .top-header .navbar-nav .menu-item,
 .top-header .navbar-nav .nav-item {
     margin-right: 1rem;
     list-style: none;
+    color: white;
+}
+
+.menu-link {
+    color: white;
 }
 
 .top-header .navbar-collapse {
@@ -89,6 +95,10 @@
     margin-right: 24px;
 }
 
+.form-control {
+    width: 40%;
+}
+
 .dropbtn {
     color: white;
     padding: 16px;
@@ -141,4 +151,54 @@
     background-image: url('./icons/heart/group-3.png');
     background-image: -webkit-image-set( url('./icons/heart/group-3.png') 1x, url('./icons/heart/group-3@2x.png') 2x, url('./icons/heart/group-3@3x.png') 3x, );
     background-image: image-set( url('./icons/heart/group-3.png') 1x, url('./icons/heart/group-3@2x.png') 2x, url('./icons/heart/group-3@3x.png') 3x, );
+}
+
+
+/* # WooCommerce Cart Icon CSS with FontAwesome 5
+---------------------------------------------------------------------------------------------------- */
+
+.yith-wcwl-items-count,
+.cart-contents {
+    position: relative;
+    display: flex !important;
+    flex-flow: column nowrap;
+    justify-content: center;
+    margin-right: 3rem;
+}
+
+.cart-contents:before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: "\f290" !important;
+    font-size: 30px;
+    color: #231f20;
+}
+
+.cart-contents:hover {
+    text-decoration: none;
+}
+
+.cart-contents-count {
+    position: absolute;
+    top: 15px;
+    right: 1px;
+    transform: translateY(-105%) translateX(25%);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 22px;
+    height: 22px;
+    width: 22px;
+    vertical-align: middle;
+    text-align: center;
+    color: #fff;
+    background: #000;
+    border-radius: 50%;
+    padding: 1px;
+}
+
+.fa-heart-o:before {
+    content: "\f004"!important;
+    font-size: 30px;
+    color: #231f20;
 }
