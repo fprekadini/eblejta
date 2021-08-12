@@ -73,8 +73,10 @@ if (!defined('ABSPATH')) {
                     ));
                     ?>
                     <div class="second-sub-nav">
-                        <ul class="navbar-nav">
 
+                        <ul class="navbar-nav">
+                            
+ 
                             <li class="dropdown">
                                 <a href="" class="dropbtn">EUR</a>
                                 <div class="dropdown-content">
@@ -83,14 +85,9 @@ if (!defined('ABSPATH')) {
                                     <a href="#">Link 3</a>
                                 </div>
                             </li>
-                            <li class="dropdown">
-                                <a href="" class="dropbtn">English</a>
-                                <div class="dropdown-content">
-                                    <a href="#">Link 1</a>
-                                    <a href="#">Link 2</a>
-                                    <a href="#">Link 3</a>
-                                </div>
-                            </li>
+                            <?php pll_the_languages(array('dropdown' => 1));  ?>
+
+                            
                         </ul>
                     </div>
                 </div>
@@ -106,8 +103,8 @@ if (!defined('ABSPATH')) {
                         </a>
                     </div>
                     <div class="header-search-wrap">
-                        
-                        <div class="dropdown">
+                        <?php echo do_shortcode('[wcas-search-form]'); ?>
+                        <!-- <div class="dropdown">
                             <button class="dropbtn">Category</button>
                             <div class="dropdown-content">
                                 <a href="#">Category 1</a>
@@ -118,14 +115,13 @@ if (!defined('ABSPATH')) {
                         <input id="q" type="search" name="q" placeholder="Kërko..." class="form-control">
                         <button type="submit" class="btn search-icon-btn">
                             <i class="fa fa-search"></i>
-                        </button>
+                        </button> -->
                     </div>
 
                     <div class="icons col-12 col-md-3 ">
-                        <div class="header-items">                    
+                        <div class="header-items">
                             <?php echo do_shortcode('[yith_wcwl_items_count]'); ?>
-                            <?php echo do_shortcode("[woo_cart_but]"); ?>  
-                          
+                            <?php echo do_shortcode("[woo_cart_but]"); ?>
                         </div>
                     </div>
                 </div>
