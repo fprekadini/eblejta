@@ -95,4 +95,3 @@ if (defined('YITH_WCWL') && !function_exists('yith_wcwl_enqueue_custom_script'))
     }
     add_action('wp_enqueue_scripts', 'yith_wcwl_enqueue_custom_script', 20);
 }
-

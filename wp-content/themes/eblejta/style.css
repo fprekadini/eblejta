@@ -202,3 +202,36 @@
     font-size: 30px;
     color: #231f20;
 }
+
+
+/* lang */
+
+
+/* input[type=email],
+input[type=number],
+input[type=password],
+input[type=reset],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=url],
+select,
+textarea {
+    color: white;
+    border: 0;
+    background: #0b0b0b;
+} */
+
+.dgwt-wcas-suggestions-wrapp {
+    width: 100%!important;
+    max-width: 1000px!important;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    left: 49%!important;
+    transform: translate(-50%, 40px);
+}
+
+.dgwt-wcas-suggestions-wrapp a {
+    width: 30%;
+}
