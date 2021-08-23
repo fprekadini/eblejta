@@ -75,8 +75,7 @@ if (!defined('ABSPATH')) {
                     <div class="second-sub-nav">
 
                         <ul class="navbar-nav">
-                            
- 
+                        
                             <li class="dropdown">
                                 <a href="" class="dropbtn">EUR</a>
                                 <div class="dropdown-content">
@@ -87,7 +86,6 @@ if (!defined('ABSPATH')) {
                             </li>
                             <?php pll_the_languages(array('dropdown' => 1));  ?>
 
-                            
                         </ul>
                     </div>
                 </div>
